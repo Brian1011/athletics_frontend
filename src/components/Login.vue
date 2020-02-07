@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-      <div class="col-xs-12 col-sm-4 offset-sm-4 ">
+      <div class="col-xs-12 col-md-4 offset-md-4 ">
         <q-card class="q-mt-xl">
           <center>
             <q-avatar size="150px">
@@ -14,7 +14,6 @@
                 <q-icon name="person" />
               </template>
             </q-input>
-
             <br>
 
             <q-input color="primary" filled v-model="password" label="Password" type="password">
@@ -36,6 +35,7 @@
 </template>
 
 <script>
+  import routes from "../router/routes";
     export default {
         name: "loginComponent",
         data () {
@@ -52,7 +52,18 @@
 
             setTimeout(()=>{
               this.loading1 = false;
-            }, 3000)
+              //this.$q.notify({message: 'Authenticated', caption:'Logged in Successfully', color:'primary', position:'top-right'})
+            }, 2000)
+
+            setTimeout(()=>{
+              this.$q.notify({message: 'Authenticated', caption:'Logged in Successfully', color:'primary', position:'top-right'})
+              //router.push({ name: 'homepage'})
+            }, 2200)
+
+            setTimeout(()=>{
+             // routes.push({name: 'dashboard'})
+              this.$router.push('/dashboard');
+            }, 2500)
           }
       }
     }
