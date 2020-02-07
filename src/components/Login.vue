@@ -9,7 +9,7 @@
           </center>
 
           <q-card-section class="q-px-xl">
-            <q-input color="purple-12" v-model="text" label="Email">
+            <q-input color="primary" filled v-model="email" label="Email" >
               <template v-slot:prepend>
                 <q-icon name="person" />
               </template>
@@ -17,7 +17,7 @@
 
             <br>
 
-            <q-input color="purple-12" v-model="text" label="Password">
+            <q-input color="primary" filled v-model="password" label="Password" type="password">
               <template v-slot:prepend>
                 <q-icon name="lock" />
               </template>
@@ -25,7 +25,7 @@
 
             <br>
             <center>
-              <q-btn color="primary" size='md'>Submit</q-btn>
+              <q-btn color="primary" size='md' :loading=loading1 @click="openHomePage">Submit</q-btn>
             </center>
 
           </q-card-section>
@@ -38,6 +38,23 @@
 <script>
     export default {
         name: "loginComponent",
+        data () {
+          return {
+            loading1: false,
+            email: '',
+            password: '',
+          }
+        },
+
+      methods: {
+          openHomePage(){
+            this.loading1 = true;
+
+            setTimeout(()=>{
+              this.loading1 = false;
+            }, 3000)
+          }
+      }
     }
 </script>
 
