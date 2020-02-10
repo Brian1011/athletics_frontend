@@ -1,20 +1,21 @@
 <template>
     <div>
       <summary-cards></summary-cards>
-      <br>
-      <q-separator/>
+
       <br>
       <dashboard-graphs></dashboard-graphs>
       <br>
+      <sales-table></sales-table>
     </div>
 </template>
 
 <script>
     import SummaryCards from "./SummaryCards";
     import DashboardGraphs from "./DashboardGraphs";
+    import SalesTable from "./SalesTable";
     export default {
         name: "dashboard",
-      components: {DashboardGraphs, SummaryCards}
+      components: {SalesTable, DashboardGraphs, SummaryCards}
     }
 </script>
 

@@ -1,6 +1,8 @@
 <template>
-  <div class="row">
+  <div class="row q-px-lg q-py-lg">
     <div class="col-12">
+      <br>
+      <q-separator/>
       <div id="app">
         <div id="chart-container">
           <fusioncharts
@@ -29,7 +31,7 @@
   // STEP 2: Prepare the data
   const chartData = [
     {
-      label: "Venezuela",
+      label: "Kenya",
       value: "290"
     },
     {

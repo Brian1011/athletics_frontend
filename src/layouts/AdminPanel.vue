@@ -16,7 +16,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="left" side="left" behavior="desktop" bordered>
+    <q-drawer v-model="left" side="left"  behavior="desktop" bordered>
       <!-- drawer content -->
       <div class="flex flex-center">
         <q-item>
