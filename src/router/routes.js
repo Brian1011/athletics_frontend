@@ -1,4 +1,5 @@
 import Login from "../pages/Login";
+import dashboard from "../pages/dashboard";
 
 const routes = [
   {
@@ -12,7 +13,7 @@ const routes = [
     path: '/',
     component: () => import('layouts/AdminPanel.vue'),
     children: [
-      { path: 'dashboard', component: () => import('pages/Index.vue') },
+      { path: 'dashboard', component: dashboard },
     ],
   },
 ]
