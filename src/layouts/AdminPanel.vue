@@ -11,7 +11,7 @@
             <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
           </q-avatar>
           -->
-          Admin Dashboard Template
+          Vue Admin Dashboard Template
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -61,7 +61,7 @@
     </q-page-container>
     <q-footer elevated class="bg-dark text-white">
       <q-toolbar>
-          Created and designed by --> <a href="https://www.linkedin.com/in/brian-mutinda-366064163/">  Maingi Brian Mutinda</a>
+          Designed and Created by --> <a href="https://www.linkedin.com/in/brian-mutinda-366064163/">  Maingi Brian Mutinda</a>
       </q-toolbar>
     </q-footer>
   </q-layout>
@@ -76,12 +76,12 @@
         left: false,
         link: 'inbox',
         menus:[
-          {link: 'inbox', icon: 'dashboard', label: 'Dashboard'},
-          {link: 'table', icon: 'table_chart', label: 'Tables'},
-          {link: 'forms', icon: 'notes', label: 'Forms'},
-          {link: 'notification', icon: 'notifications', label: 'Notifications'},
-          {link: 'graph', icon: 'pie_chart', label: 'Graphs'},
-          {link: 'example', icon: 'apps', label: 'Examples'},
+          {link: 'inbox', icon: 'dashboard', label: 'Dashboard', to:''},
+          {link: 'table', icon: 'table_chart', label: 'Tables', to:''},
+          {link: 'forms', icon: 'notes', label: 'Forms', to:''},
+          {link: 'notification', icon: 'notifications', label: 'Notifications', to:''},
+          {link: 'graph', icon: 'pie_chart', label: 'Graphs', to:''},
+          {link: 'example', icon: 'apps', label: 'Examples', to:''},
         ]
       }
     }
