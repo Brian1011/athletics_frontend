@@ -1,5 +1,6 @@
 import Login from "../pages/Login";
 import dashboard from "../pages/dashboard";
+import tables from "../pages/menu/tables";
 
 const routes = [
   {
@@ -14,6 +15,7 @@ const routes = [
     component: () => import('layouts/AdminPanel.vue'),
     children: [
       { path: 'dashboard', component: dashboard },
+      {path: 'tables', component: tables}
     ],
   },
 ]

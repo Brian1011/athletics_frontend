@@ -9,6 +9,7 @@
           :data="data"
           :columns="columns"
           row-key="name"
+          :filter="filter"
         >
           <template v-slot:top-right>
             <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
@@ -23,37 +24,37 @@
       <div class="col-6">
         <q-card class="q-ml-md">
           <q-card-section>
-            <div class="text-h6">Top 5 Counties in Kenya</div>
+            <div class="text-h6">Last Week Sales Per Target</div>
           </q-card-section>
 
           <q-card-section>
             <q-linear-progress value="0.8" class="q-mt-md" size="30px" track-color="orange">
               <div class="absolute-full flex flex-center">
-                <q-badge color="white" text-color="accent" label="Vihiga 80%" />
+                <q-badge color="white" text-color="accent" label="Monday 80%" />
               </div>
             </q-linear-progress>
 
             <q-linear-progress value="0.75" class="q-mt-md" size="30px" color="warning" track-color="orange">
               <div class="absolute-full flex flex-center">
-                <q-badge color="white" text-color="accent" label="Kiambu 75%" />
+                <q-badge color="white" text-color="accent" label="Tuesday 75%" />
               </div>
             </q-linear-progress>
 
-            <q-linear-progress value="0.70" class="q-mt-md" size="30px" color="secondary" track-color="orange">
+            <q-linear-progress value="0.83" class="q-mt-md" size="30px" color="secondary" track-color="orange">
               <div class="absolute-full flex flex-center">
-                <q-badge color="white" text-color="accent" label="Kisii 70%" />
+                <q-badge color="white" text-color="accent" label="Wednesday 83%" />
               </div>
             </q-linear-progress>
 
             <q-linear-progress value="0.65" class="q-mt-md" size="30px" color="accent" track-color="orange">
               <div class="absolute-full flex flex-center">
-                <q-badge color="white" text-color="accent" label="Migori 65%" />
+                <q-badge color="white" text-color="accent" label="Thursday 65%" />
               </div>
             </q-linear-progress>
 
-            <q-linear-progress value="0.50" class="q-mt-md" size="30px" color="brown" track-color="orange">
+            <q-linear-progress value="0.90" class="q-mt-md" size="30px" color="brown" track-color="orange">
               <div class="absolute-full flex flex-center">
-                <q-badge color="white" text-color="accent" label="Homabay 50%" />
+                <q-badge color="white" text-color="accent" label="Friday 90%" />
               </div>
             </q-linear-progress>
           </q-card-section>
