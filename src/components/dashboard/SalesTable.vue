@@ -3,7 +3,7 @@
     <q-separator/>
     <br>
 <!--    <p>Yellow {{tableData}}</p>-->
-    <p>Blue{{tableDataGetter}}</p>
+<!--    <p>Blue{{tableDataGetter}}</p>-->
     <div class="row ">
       <div class="col-6">
         <q-table
@@ -29,37 +29,37 @@
             <div class="text-h6">Last Week Sales Per Target</div>
           </q-card-section>
 
-<!--          <q-card-section>-->
-<!--            <q-linear-progress value=0.8 class="q-mt-md" size="30px" track-color="orange">-->
-<!--              <div class="absolute-full flex flex-center">-->
-<!--                <q-badge color="white" text-color="accent" label="Monday 80%" />-->
-<!--              </div>-->
-<!--            </q-linear-progress>-->
+          <q-card-section>
+            <q-linear-progress value=0.8 class="q-mt-md" size="30px" track-color="orange">
+              <div class="absolute-full flex flex-center">
+                <q-badge color="white" text-color="accent" label="Monday 80%" />
+              </div>
+            </q-linear-progress>
 
-<!--            <q-linear-progress value=0.75 class="q-mt-md" size="30px" color="warning" track-color="orange">-->
-<!--              <div class="absolute-full flex flex-center">-->
-<!--                <q-badge color="white" text-color="accent" label="Tuesday 75%" />-->
-<!--              </div>-->
-<!--            </q-linear-progress>-->
+            <q-linear-progress value=0.75 class="q-mt-md" size="30px" color="warning" track-color="orange">
+              <div class="absolute-full flex flex-center">
+                <q-badge color="white" text-color="accent" label="Tuesday 75%" />
+              </div>
+            </q-linear-progress>
 
-<!--            <q-linear-progress value=0.83 class="q-mt-md" size="30px" color="secondary" track-color="orange">-->
-<!--              <div class="absolute-full flex flex-center">-->
-<!--                <q-badge color="white" text-color="accent" label="Wednesday 83%" />-->
-<!--              </div>-->
-<!--            </q-linear-progress>-->
+            <q-linear-progress value=0.83 class="q-mt-md" size="30px" color="secondary" track-color="orange">
+              <div class="absolute-full flex flex-center">
+                <q-badge color="white" text-color="accent" label="Wednesday 83%" />
+              </div>
+            </q-linear-progress>
 
-<!--            <q-linear-progress value=0.65 class="q-mt-md" size="30px" color="accent" track-color="orange">-->
-<!--              <div class="absolute-full flex flex-center">-->
-<!--                <q-badge color="white" text-color="accent" label="Thursday 65%" />-->
-<!--              </div>-->
-<!--            </q-linear-progress>-->
+            <q-linear-progress value=0.65 class="q-mt-md" size="30px" color="accent" track-color="orange">
+              <div class="absolute-full flex flex-center">
+                <q-badge color="white" text-color="accent" label="Thursday 65%" />
+              </div>
+            </q-linear-progress>
 
-<!--            <q-linear-progress value=0.90 class="q-mt-md" size="30px" color="brown" track-color="orange">-->
-<!--              <div class="absolute-full flex flex-center">-->
-<!--                <q-badge color="white" text-color="accent" label="Friday 90%" />-->
-<!--              </div>-->
-<!--            </q-linear-progress>-->
-<!--          </q-card-section>-->
+            <q-linear-progress value=0.90 class="q-mt-md" size="30px" color="brown" track-color="orange">
+              <div class="absolute-full flex flex-center">
+                <q-badge color="white" text-color="accent" label="Friday 90%" />
+              </div>
+            </q-linear-progress>
+          </q-card-section>
         </q-card>
       </div>
     </div>

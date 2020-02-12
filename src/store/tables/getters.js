@@ -2,7 +2,6 @@
 export function someGetter (state) { }
 */
 
-export async function tableDataGetter(state) {
-  console.log('****************YELLOW**********');
+export function tableDataGetter(state) {
   return state.tableData;
 }

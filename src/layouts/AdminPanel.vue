@@ -45,7 +45,7 @@
         clickable
         v-ripple
         :active="link === menu.link"
-        @click="link = menu.link"
+        @click="link = menu.link, goToPage(menu.to)"
         active-class="my-menu-link"
         >
           <q-item-section avatar>
@@ -73,16 +73,22 @@
 
     data () {
       return {
-        left: false,
+        left: true,
         link: 'inbox',
         menus:[
-          {link: 'inbox', icon: 'dashboard', label: 'Dashboard', to:''},
-          {link: 'table', icon: 'table_chart', label: 'Tables', to:''},
-          {link: 'forms', icon: 'notes', label: 'Forms', to:''},
-          {link: 'notification', icon: 'notifications', label: 'Notifications', to:''},
-          {link: 'graph', icon: 'pie_chart', label: 'Graphs', to:''},
-          {link: 'example', icon: 'apps', label: 'Examples', to:''},
+          {link: 'inbox', icon: 'dashboard', label: 'Dashboard', to:'/dashboard'},
+          {link: 'table', icon: 'table_chart', label: 'Tables', to:'/tables'},
+          {link: 'forms', icon: 'notes', label: 'Forms', to:'/'},
+          {link: 'notification', icon: 'notifications', label: 'Notifications', to:'/'},
+          {link: 'graph', icon: 'pie_chart', label: 'Graphs', to:'/'},
+          {link: 'example', icon: 'apps', label: 'Examples', to:'/'},
         ]
+      }
+    },
+
+    methods: {
+      goToPage(route){
+        this.$router.push(route);
       }
     }
   }
