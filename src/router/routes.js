@@ -15,7 +15,8 @@ const routes = [
     component: () => import('layouts/AdminPanel.vue'),
     children: [
       { path: 'dashboard', component: dashboard },
-      {path: 'tables', component: tables}
+      { path: 'tables', component: tables},
+
     ],
   },
 ]
