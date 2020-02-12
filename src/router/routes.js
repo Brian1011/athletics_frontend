@@ -16,7 +16,6 @@ const routes = [
     children: [
       { path: 'dashboard', component: dashboard },
       { path: 'tables', component: tables},
-
     ],
   },
 ]
