@@ -20,7 +20,7 @@
           </div>
 
           <div class="col-xs-12 col-md-6">
-            <dark-form/>
+            <validated-form/>
           </div>
       </div>
     </div>
@@ -30,9 +30,10 @@
     import BasicForm from "./basicForm";
     import DarkForm from "./darkForm";
     import IconForm from "./iconForm";
+    import ValidatedForm from "./validatedForm";
     export default {
         name: "formComponents",
-      components: {IconForm, DarkForm, BasicForm}
+      components: {ValidatedForm, IconForm, DarkForm, BasicForm}
     }
 </script>
 

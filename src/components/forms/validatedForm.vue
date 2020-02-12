@@ -1,10 +1,9 @@
 <template>
   <div class="q-px-md">
     <q-card>
-      <p class="text-h6 flex flex-center">Form with Icon(s)</p>
+      <p class="text-h6 flex flex-center">Form with Validation</p>
       <q-card-section>
         <q-form @submit="submit">
-          <p class="text-body1 flex flex-center">Prepend Icon</p><br>
           <q-input color="primary" filled label="Name">
             <template v-slot:prepend>
               <q-icon name="person" />
@@ -26,22 +25,8 @@
           </q-input>
           <br>
 
-          <p class="text-body1 flex flex-center">Append Icon</p><br>
-          <q-input color="primary" filled label="Username" >
-            <template v-slot:append>
-              <q-icon name="person" />
-            </template>
-          </q-input>
-          <br>
-
-          <q-input color="primary" filled label="Password" >
-            <template v-slot:append>
-              <q-icon name="lock" />
-            </template>
-          </q-input>
-          <br>
-
-          <q-btn color="primary" size='md' :loading=loading1 @click="openHomePage">Submit</q-btn>
+          <q-btn color="primary" size='md' :loading=loading1 @click="" >Submit</q-btn>
+          <q-btn color="primary" size='md' :loading=loading1 @click="" class="q-ml-sm">Clear</q-btn>
         </q-form>
       </q-card-section>
     </q-card>
@@ -50,7 +35,13 @@
 
 <script>
     export default {
-        name: "iconForm"
+      name: "validatedForm",
+      data(){
+        return{ }
+      },
+      methods:{
+        submit(){ }
+      }
     }
 </script>
 
