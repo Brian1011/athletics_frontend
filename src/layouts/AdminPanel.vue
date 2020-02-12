@@ -78,7 +78,7 @@
         menus:[
           {link: 'inbox', icon: 'dashboard', label: 'Dashboard', to:'/dashboard'},
           {link: 'table', icon: 'table_chart', label: 'Tables', to:'/tables'},
-          {link: 'forms', icon: 'notes', label: 'Forms', to:'/'},
+          {link: 'forms', icon: 'notes', label: 'Forms', to:'/forms'},
           {link: 'notification', icon: 'notifications', label: 'Notifications', to:'/'},
           {link: 'graph', icon: 'pie_chart', label: 'Graphs', to:'/'},
           {link: 'example', icon: 'apps', label: 'Examples', to:'/'},

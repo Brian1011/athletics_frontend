@@ -14,6 +14,22 @@
         </template>
       </q-input>
     </template>
+    <template v-slot:item.action="{ item }">
+      <q-icon name="print" small>print</q-icon>
+      <q-icon
+        small
+        class="mr-2"
+        @click="editItem(item)"
+      >
+        edit
+      </q-icon>
+      <q-icon
+        small
+        @click="deleteItem(item)"
+      >
+        delete
+      </q-icon>
+    </template>
   </q-table>
 </template>
 
@@ -23,6 +39,9 @@
         computed: {
           tableData(){
             return this.$store.state.table.tableData;
+          },
+          formTitle () {
+            return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
           }
         },
         data(){
@@ -43,8 +62,40 @@
               { name: 'carbs', label: 'Profit (%)', field: 'carbs', sortable: true  },
               { name: 'protein', label: 'Rating', field: 'protein' },
             ],
+            editedIndex: -1,
+            editedItem: {
+              name: '',
+              calories: 0,
+              fat: 0,
+              carbs: 0,
+              protein: 0,
+            },
+            defaultItem: {
+              name: '',
+              calories: 0,
+              fat: 0,
+              carbs: 0,
+              protein: 0,
+            },
+            watch: {
+              dialog (val) {
+                val || this.close()
+              },
+            },
           }
+        },
+      methods: {
+        editItem (item) {
+          this.editedIndex = this.tableData.indexOf(item)
+          this.editedItem = Object.assign({}, item)
+          //this.dialog = true
+        },
+
+        deleteItem (item) {
+          const index = this.tableData.indexOf(item)
+          confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
         }
+      }
     }
 </script>
 

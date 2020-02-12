@@ -1,6 +1,7 @@
 import Login from "../pages/Login";
 import dashboard from "../pages/dashboard";
 import tables from "../pages/menu/tables";
+import forms from "../pages/menu/forms"
 
 const routes = [
   {
@@ -16,6 +17,7 @@ const routes = [
     children: [
       { path: 'dashboard', component: dashboard },
       { path: 'tables', component: tables},
+      { path: 'forms', component: forms},
     ],
   },
 ]

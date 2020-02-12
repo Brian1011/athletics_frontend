@@ -1,7 +1,6 @@
 <template>
     <div>
       <summary-cards></summary-cards>
-
       <br>
       <dashboard-graphs></dashboard-graphs>
       <br>
