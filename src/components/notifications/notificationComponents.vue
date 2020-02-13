@@ -1,12 +1,14 @@
 <template>
-  <div>
-
+  <div class="q-px-lg q-py-lg">
+    <notifications></notifications>
   </div>
 </template>
 
 <script>
+    import Notifications from "./notifications";
     export default {
-        name: "notificationComponent"
+        name: "notificationComponent",
+      components: {Notifications}
     }
 </script>
 
