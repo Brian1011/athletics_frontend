@@ -3,7 +3,7 @@
     <q-card>
       <p class="text-h6 flex flex-center">Form with Icon(s)</p>
       <q-card-section>
-        <q-form @submit="submit">
+        <q-form>
           <p class="text-body1 flex flex-center">Prepend Icon</p><br>
           <q-input color="primary" filled label="Name">
             <template v-slot:prepend>
@@ -24,8 +24,9 @@
               <q-icon name="phone" />
             </template>
           </q-input>
-          <br>
+          <br><br>
 
+          <q-separator></q-separator>
           <p class="text-body1 flex flex-center">Append Icon</p><br>
           <q-input color="primary" filled label="Username" >
             <template v-slot:append>
@@ -41,7 +42,7 @@
           </q-input>
           <br>
 
-          <q-btn color="primary" size='md' :loading=loading1 @click="openHomePage">Submit</q-btn>
+          <q-btn color="primary" size='md'>Submit</q-btn>
         </q-form>
       </q-card-section>
     </q-card>
