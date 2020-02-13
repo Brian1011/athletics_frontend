@@ -2,6 +2,7 @@ import Login from "../pages/Login";
 import dashboard from "../pages/dashboard";
 import tables from "../pages/menu/tables";
 import forms from "../pages/menu/forms"
+import notifications from "../pages/menu/notifications"
 
 const routes = [
   {
@@ -16,8 +17,9 @@ const routes = [
     component: () => import('layouts/AdminPanel.vue'),
     children: [
       { path: 'dashboard', component: dashboard },
-      { path: 'tables', component: tables},
-      { path: 'forms', component: forms},
+      { path: 'tables', component: tables },
+      { path: 'forms', component: forms },
+      { path: 'notifications', component: notifications},
     ],
   },
 ]

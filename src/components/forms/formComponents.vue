@@ -40,7 +40,7 @@
     import ValidatedForm from "./validatedForm";
     import ColouredForm from "./colouredForm";
     export default {
-        name: "formComponents",
+      name: "formComponents",
       components: {ColouredForm, ValidatedForm, IconForm, DarkForm, BasicForm}
     }
 </script>
