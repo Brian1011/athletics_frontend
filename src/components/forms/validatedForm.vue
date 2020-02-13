@@ -1,5 +1,5 @@
 <template>
-  <div class="q-px-md">
+  <div class="q-px-md q-py-md">
     <q-card>
       <p class="text-h6 flex flex-center">Form with Validation</p>
       <q-card-section>
@@ -26,7 +26,7 @@
           <br>
 
           <q-btn color="primary" size='md' type="submit">Submit</q-btn>
-          <q-btn color="primary" size='md' @click="onReset" class="q-ml-sm">Clear</q-btn>
+          <q-btn color="secondary" size='md' @click="onReset" class="q-ml-sm">Clear</q-btn>
         </q-form>
       </q-card-section>
     </q-card>
@@ -46,9 +46,8 @@
       },
       methods:{
         submit(){
-            this.validateEmail(this.email);
             this.$q.notify({
-              color: 'green-4',
+              color: 'primary',
               textColor: 'white',
               icon: 'cloud_done',
               message: 'Submitted'

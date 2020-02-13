@@ -23,6 +23,13 @@
             <validated-form/>
           </div>
       </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <coloured-form></coloured-form>
+        </div>
+      </div>
+
     </div>
 </template>
 
@@ -31,9 +38,10 @@
     import DarkForm from "./darkForm";
     import IconForm from "./iconForm";
     import ValidatedForm from "./validatedForm";
+    import ColouredForm from "./colouredForm";
     export default {
         name: "formComponents",
-      components: {ValidatedForm, IconForm, DarkForm, BasicForm}
+      components: {ColouredForm, ValidatedForm, IconForm, DarkForm, BasicForm}
     }
 </script>
 

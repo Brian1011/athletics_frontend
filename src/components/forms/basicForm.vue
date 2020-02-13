@@ -1,5 +1,5 @@
 <template>
-    <div class="q-px-md">
+    <div class="q-px-md q-py-md">
       <q-card>
         <p class="text-h6 flex flex-center">Basic Form</p>
         <q-card-section>
@@ -13,7 +13,7 @@
             <q-input color="primary" filled label="Phone Number" ></q-input>
             <br>
 
-            <q-btn color="primary" size='md' :loading=loading1 @click="openHomePage">Submit</q-btn>
+            <q-btn color="primary" size='md'>Submit</q-btn>
           </q-form>
         </q-card-section>
       </q-card>

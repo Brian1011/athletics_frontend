@@ -1,5 +1,5 @@
 <template>
-  <div class="q-px-md">
+  <div class="q-px-md q-py-md">
     <q-card>
       <p class="text-h6 flex flex-center">Form with Icon(s)</p>
       <q-card-section>
