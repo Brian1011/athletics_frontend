@@ -3,6 +3,7 @@ import dashboard from "../pages/dashboard";
 import tables from "../pages/menu/tables";
 import forms from "../pages/menu/forms"
 import notifications from "../pages/menu/notifications"
+import graphs from "../pages/menu/graphs"
 
 const routes = [
   {
@@ -20,6 +21,7 @@ const routes = [
       { path: 'tables', component: tables },
       { path: 'forms', component: forms },
       { path: 'notifications', component: notifications},
+      { path: 'graphs', component: graphs},
     ],
   },
 ]

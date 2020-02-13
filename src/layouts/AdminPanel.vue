@@ -80,7 +80,7 @@
           {link: 'table', icon: 'table_chart', label: 'Tables', to:'/tables'},
           {link: 'forms', icon: 'notes', label: 'Forms', to:'/forms'},
           {link: 'notification', icon: 'notifications', label: 'Notifications', to:'/notifications'},
-          {link: 'graph', icon: 'pie_chart', label: 'Graphs', to:'/'},
+          {link: 'graph', icon: 'pie_chart', label: 'Graphs', to:'/graphs'},
           {link: 'example', icon: 'apps', label: 'Examples', to:'/'},
         ]
       }
