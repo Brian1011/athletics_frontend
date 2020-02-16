@@ -38,6 +38,17 @@
       </div>
     </div>
 
+    <br>
+    <q-separator></q-separator>
+    <br>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <mixed-graph></mixed-graph>
+      </div>
+
+    </div>
+
   </div>
 </template>
 
@@ -48,9 +59,10 @@
     import LineChart from "./lineChart";
     import HorizontalBarChart from "./horizontalBarChart";
     import ScatterChart from "./scatterChart";
+    import MixedGraph from "./mixedGraph";
     export default {
         name: "graphComponents",
-      components: {ScatterChart, HorizontalBarChart, LineChart, Spline, ApexChartTrial, PieChart}
+      components: {MixedGraph, ScatterChart, HorizontalBarChart, LineChart, Spline, ApexChartTrial, PieChart}
     }
 </script>
 
