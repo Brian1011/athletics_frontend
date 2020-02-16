@@ -6,9 +6,13 @@
       </div>
 
       <div class="col-xs-12 col-md-6">
-        <spline></spline>
+        <horizontal-bar-chart></horizontal-bar-chart>
       </div>
     </div>
+
+    <br>
+    <q-separator></q-separator>
+    <br>
 
     <div class="row">
       <div class="col-xs-12 col-md-6">
@@ -27,9 +31,10 @@
     import ApexChartTrial from "./apexChartTrial";
     import Spline from "./spline";
     import LineChart from "./lineChart";
+    import HorizontalBarChart from "./horizontalBarChart";
     export default {
         name: "graphComponents",
-      components: {LineChart, Spline, ApexChartTrial, PieChart}
+      components: {HorizontalBarChart, LineChart, Spline, ApexChartTrial, PieChart}
     }
 </script>
 
