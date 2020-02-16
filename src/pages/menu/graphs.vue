@@ -1,10 +1,12 @@
 <template>
-
+  <graph-components></graph-components>
 </template>
 
 <script>
+    import GraphComponents from "../../components/graphs/graphComponents";
     export default {
-        name: "graphs"
+        name: "graphs",
+      components: {GraphComponents}
     }
 </script>
 
