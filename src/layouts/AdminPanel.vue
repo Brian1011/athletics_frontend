@@ -38,8 +38,10 @@
         </q-item>
       </div>
 
+      <q-separator></q-separator>
+
       <!--side menus-->
-      <q-list bordered padding class="rounded-borders text-black" >
+      <q-list  padding class=" text-black" >
         <q-item
           v-for="menu in menus"
         clickable
@@ -54,7 +56,29 @@
 
           <q-item-section>{{menu.label}}</q-item-section>
         </q-item>
+
+        <q-separator></q-separator>
+
+        <q-item
+          v-for="menu in menus_extra"
+          clickable
+          v-ripple
+          :active="link === menu.link"
+          @click="link = menu.link, goToPage(menu.to)"
+          active-class="my-menu-link"
+        >
+          <q-item-section avatar>
+            <q-icon :name=menu.icon></q-icon>
+          </q-item-section>
+
+          <q-item-section>{{menu.label}}</q-item-section>
+        </q-item>
+
+
       </q-list>
+
+      <q-separator></q-separator>
+
     </q-drawer>
     <q-page-container>
       <router-view />
@@ -81,7 +105,10 @@
           {link: 'forms', icon: 'notes', label: 'Forms', to:'/forms'},
           {link: 'notification', icon: 'notifications', label: 'Notifications', to:'/notifications'},
           {link: 'graph', icon: 'pie_chart', label: 'Charts', to:'/graphs'},
+        ],
+        menus_extra:[
           {link: 'example', icon: 'apps', label: 'Examples', to:'/'},
+          {link: 'exit', icon: 'lock', label: 'Exit', to:'/'}
         ]
       }
     },
