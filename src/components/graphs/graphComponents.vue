@@ -4,11 +4,9 @@
       <div class="col-xs-12 col-md-6">
         <apex-chart-trial></apex-chart-trial>
       </div>
-    </div>
 
-    <div class="row">
       <div class="col-xs-12 col-md-6">
-        <pie-chart></pie-chart>
+        <spline></spline>
       </div>
     </div>
   </div>
@@ -17,9 +15,10 @@
 <script>
     import PieChart from "./pieChart";
     import ApexChartTrial from "./apexChartTrial";
+    import Spline from "./spline";
     export default {
         name: "graphComponents",
-      components: {ApexChartTrial, PieChart}
+      components: {Spline, ApexChartTrial, PieChart}
     }
 </script>
 
