@@ -107,7 +107,7 @@
           {link: 'graph', icon: 'pie_chart', label: 'Charts', to:'/graphs'},
         ],
         menus_extra:[
-          {link: 'example', icon: 'apps', label: 'Examples', to:'/'},
+          {link: 'example', icon: 'apps', label: 'Examples', to:'/examples'},
           {link: 'exit', icon: 'lock', label: 'Exit', to:'/'}
         ]
       }
