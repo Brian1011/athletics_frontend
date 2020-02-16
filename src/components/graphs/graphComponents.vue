@@ -34,7 +34,7 @@
       </div>
 
       <div class="col-xs-12 col-md-6">
-        <spline></spline>
+        <scatter-chart></scatter-chart>
       </div>
     </div>
 
@@ -47,9 +47,10 @@
     import Spline from "./spline";
     import LineChart from "./lineChart";
     import HorizontalBarChart from "./horizontalBarChart";
+    import ScatterChart from "./scatterChart";
     export default {
         name: "graphComponents",
-      components: {HorizontalBarChart, LineChart, Spline, ApexChartTrial, PieChart}
+      components: {ScatterChart, HorizontalBarChart, LineChart, Spline, ApexChartTrial, PieChart}
     }
 </script>
 
