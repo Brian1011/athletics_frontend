@@ -1,65 +1,44 @@
 <template>
-    <div>
-        <div id="chart" ref="barchart"></div>
-    </div>
+  <div>
+    <div class="text-h4 flex flex-center">Pie Chart</div><br>
+    <apexchart type="pie" width="380" :options="chartOptions" :series="series"></apexchart>
+  </div>
 </template>
 
 <script>
-  import ApexCharts from 'apexcharts'
+  import Vue from 'vue';
+  import VueApexCharts from 'vue-apexcharts'
+  Vue.use(VueApexCharts);
+  Vue.component('apexchart',VueApexCharts)
 
-  export  default {
-    name: "pieChart",
-    component: {ApexCharts},
+  export default {
+    name:"pieChart",
     data(){
       return{
-        categories: [2,3,4,5],
-        presentData: [1,2,3,4],
-        absentData: [0,0,0,0]
-      }
-    },
-    created(){
-      //new ApexCharts(this.$refs.barchart, {
-        new ApexCharts(document.querySelector('#chart'), {
-        chart: {
-          type: 'bar',
-          height: 450,
-          //stacked: true,
-        },
-        plotOptions: {
-          bar: {
-            horizontal: false,
-            columnWidth: '35%',
-            endingShape: 'rounded'
-          }
-        },
-        series: [
-          {
-            name: 'Present',
-            data: this.presentData
-          },
-          {
-            name: 'Absent',
-            data: this.absentData
-          },
-        ],
-        xaxis: {
-          //categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
-          categories: this.categories
-        },
-        yaxis: {
+        series: [44, 55, 13, 43, 22],
+        chartOptions: {
           title: {
-            text: 'Students'
-          }
-        },
-        fill: {
-          opacity: 1
+            text: 'Sales per City',
+            align: 'center'
+          },
+          chart: {
+            width: 380,
+            type: 'pie',
+          },
+          labels: ['Nairobi', 'Mombasa', 'Kisumu', 'Eldoret', 'Machakos'],
+          responsive: [{
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200
+              },
+              legend: {
+                position: 'bottom'
+              }
+            }
+          }]
         }
-      }).render()
+      }
     }
   }
-
 </script>
-
-<style scoped>
-
-</style>

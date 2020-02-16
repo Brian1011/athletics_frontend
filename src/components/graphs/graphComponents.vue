@@ -23,6 +23,21 @@
         <spline></spline>
       </div>
     </div>
+
+    <br>
+    <q-separator></q-separator>
+    <br>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <PieChart/>
+      </div>
+
+      <div class="col-xs-12 col-md-6">
+        <spline></spline>
+      </div>
+    </div>
+
   </div>
 </template>
 
