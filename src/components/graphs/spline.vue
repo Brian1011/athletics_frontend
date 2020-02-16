@@ -21,6 +21,9 @@
           }, {
             name: 'cost',
             data: [11, 32, 45, 32, 34, 52, 41]
+          }, {
+            name: 'profit',
+            data: [18, 30, 70, 10, 20, 48, 120]
           }],
           chartOptions: {
             chart: {

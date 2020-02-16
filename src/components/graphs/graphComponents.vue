@@ -9,6 +9,16 @@
         <spline></spline>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <line-chart></line-chart>
+      </div>
+
+      <div class="col-xs-12 col-md-6">
+        <spline></spline>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,9 +26,10 @@
     import PieChart from "./pieChart";
     import ApexChartTrial from "./apexChartTrial";
     import Spline from "./spline";
+    import LineChart from "./lineChart";
     export default {
         name: "graphComponents",
-      components: {Spline, ApexChartTrial, PieChart}
+      components: {LineChart, Spline, ApexChartTrial, PieChart}
     }
 </script>
 
