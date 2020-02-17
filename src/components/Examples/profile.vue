@@ -1,15 +1,14 @@
 <template>
     <div>
-      <div class="row">
         <q-card>
           <q-card-section>
             <div class="text-h4 flex flex-center">Profile</div><br>
             <div class="row">
-              <div class="col-xs-12 col-md-5 bg-grey-4">
+              <div class="col-xs-12 col-md-5 flex flex-center">
                 <q-avatar size="150px">
                   <q-img src="statics/images/person.png"></q-img>
                 </q-avatar>
-                <q-separator vertical />
+                <q-separator vertical/>
               </div>
 
               <div class="col-xs-12 col-md-7 ">
@@ -29,8 +28,6 @@
             </div>
           </q-card-section>
         </q-card>
-
-      </div>
     </div>
 </template>
 
