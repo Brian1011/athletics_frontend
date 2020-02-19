@@ -5,7 +5,7 @@
 <!--    <p>Yellow {{tableData}}</p>-->
 <!--    <p>Blue{{tableDataGetter}}</p>-->
     <div class="row ">
-      <div class="col-6">
+      <div class="col-xs-12 col-sm-6 q-pb-sm">
         <q-table
           title="Kenya Sales 2019"
           :data="tableData"
@@ -23,7 +23,7 @@
         </q-table>
       </div>
 
-      <div class="col-6">
+      <div class="col-xs-12 col-sm-6">
         <q-card class="q-ml-md">
           <q-card-section>
             <div class="text-h6">Last Week Sales Per Target</div>

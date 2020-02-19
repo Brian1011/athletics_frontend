@@ -1,63 +1,53 @@
 <template>
   <div>
     <div class="row q-px-lg q-py-lg">
-      <div class="col-4">
-        <q-card class="my-card text-white q-mr-sm summary_card_success">
+      <div class="col-xs-12 col-sm-4 q-pb-md" v-for="card in cards">
+        <q-card v-if="card.status === 'inc'" class="my-card text-white q-mr-sm summary_card_success">
           <q-card-section>
-            <div class="text-h6">Users</div>
+            <div class="text-h6">{{card.title}}</div>
             <q-separator dark/>
             <br>
 
             <div class="row">
-              <div class="col-6">
-                <div class="text-h2">900</div>
-                <div class="text-subtitle2">Members Online</div>
+              <div class="col-xs-12  col-sm-6">
+                <div class="text-h2">{{card.numbers}}</div>
               </div>
-              <div class="col-6">
-                <div class="text-h5"><q-icon name="arrow_upward" size="md" class="text-green"></q-icon>10.58% </div>
+
+              <div class="col-xs-12 col-sm-6">
+                <div class="text-h5">
+                  <q-icon name="arrow_upward" size="md" class="text-green" v-if="card.status === 'inc'"></q-icon>
+                  {{card.percent}}
+                </div>
               </div>
+            </div>
+
+            <div class="row">
+              <div class="text-subtitle2">{{card.subtitle}}</div>
             </div>
 
           </q-card-section>
         </q-card>
-      </div>
-
-      <div class="col-4">
-        <q-card class="my-card text-white q-mr-sm summary_card_success">
+        <q-card v-else class="my-card text-white q-mr-sm summary_card_failure">
           <q-card-section>
-            <div class="text-h6">Sales</div>
+            <div class="text-h6">{{card.title}}</div>
             <q-separator dark/>
             <br>
 
             <div class="row">
-              <div class="col-6">
-                <div class="text-h2">402</div>
-                <div class="text-subtitle2">New Sales</div>
+              <div class="col-xs-12  col-sm-6">
+                <div class="text-h2">{{card.numbers}}</div>
               </div>
-              <div class="col-6">
-                <div class="text-h5"><q-icon name="arrow_upward" size="md" class="text-green"></q-icon>12.38% </div>
+
+              <div class="col-xs-12 col-sm-6">
+                <div class="text-h5">
+                  <q-icon name="arrow_downward" size="md" class="text-red" v-if="card.status === 'dec'"></q-icon>
+                  {{card.percent}}
+                </div>
               </div>
             </div>
 
-          </q-card-section>
-        </q-card>
-      </div>
-
-      <div class="col-4">
-        <q-card class="my-card text-white q-mr-sm summary_card_failure">
-          <q-card-section>
-            <div class="text-h6">Profits</div>
-            <q-separator dark/>
-            <br>
-
             <div class="row">
-              <div class="col-6">
-                <div class="text-h2">2000</div>
-                <div class="text-subtitle2">Today's Profit (Ksh)</div>
-              </div>
-              <div class="col-6">
-                <div class="text-h5"><q-icon name="arrow_downward" size="md" class="text-orange"></q-icon>12.38% </div>
-              </div>
+              <div class="text-subtitle2">{{card.subtitle}}</div>
             </div>
 
           </q-card-section>
@@ -69,7 +59,16 @@
 
 <script>
     export default {
-        name: "SummaryCards"
+      name: "SummaryCards",
+      data(){
+          return{
+            cards:[
+              {title:'Users', numbers:'900', status:'inc', percent:'10.58', subtitle:'Members Online'},
+              {title:'Sales', numbers:'402', status:'inc', percent:'10.58', subtitle:'New Sales'},
+              {title:'Profits', numbers:'2000', status:'dec', percent:'12.38', subtitle:"Today's Profit (Ksh)"}
+            ]
+          }
+      }
     }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
-  <div class="row q-px-lg q-py-lg">
-    <div class="col-12">
+  <div class="row ">
+    <div class="col-12 q-px-lg q-py-lg">
       <br>
       <q-separator/>
       <div id="app">
@@ -85,7 +85,7 @@
       return {
         "type": "column2d",
         "renderAt": "chart-container",
-        "width": "800",
+        "width": "100%",
         "height": "500",
         "dataFormat": "json",
         dataSource
