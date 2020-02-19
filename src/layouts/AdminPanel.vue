@@ -13,16 +13,42 @@
           -->
           Vue Admin Dashboard Template
         </q-toolbar-title>
+
+        <div class="row">
+          <div class="col-3">
+
+          </div>
+          <div class="col-3"></div>
+          <div class="col-3"></div>
+          <div class="col-3"></div>
+        </div>
+
+        <div class="xs-hide">
+          <q-btn flat round dense icon="notifications" class="">
+            <q-badge floating color="grey">10</q-badge>
+            <q-tooltip>Updates</q-tooltip>
+          </q-btn>
+
+          <q-btn flat round dense icon="message" class="q-ml-sm">
+            <q-badge floating color="red">4</q-badge>
+            <q-tooltip>Messages</q-tooltip>
+          </q-btn>
+
+          <q-btn flat round dense class="q-ml-sm">
+            <q-avatar flat round dense color="black" text-color="white"><img src="statics/images/red.jpeg"></q-avatar>
+            <q-tooltip>User Account</q-tooltip>
+          </q-btn>
+        </div>
+
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="left" side="left"  behavior="desktop" bordered>
+    <q-drawer v-model="left" side="left" behavior="xs-mobile desktop" bordered>
       <!-- drawer content -->
       <div class="flex flex-center">
         <q-item>
           <q-item-section>
             <q-avatar size="90px">
-              <q-badge floating color="red">10</q-badge>
               <img src="statics/images/red.jpeg">
             </q-avatar>
           </q-item-section>

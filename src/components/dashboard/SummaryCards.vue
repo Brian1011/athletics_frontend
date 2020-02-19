@@ -16,7 +16,7 @@
               <div class="col-xs-12 col-sm-6">
                 <div class="text-h5">
                   <q-icon name="arrow_upward" size="md" class="text-green" v-if="card.status === 'inc'"></q-icon>
-                  {{card.percent}}
+                  {{card.percent}} %
                 </div>
               </div>
             </div>
@@ -41,7 +41,7 @@
               <div class="col-xs-12 col-sm-6">
                 <div class="text-h5">
                   <q-icon name="arrow_downward" size="md" class="text-red" v-if="card.status === 'dec'"></q-icon>
-                  {{card.percent}}
+                  {{card.percent}} %
                 </div>
               </div>
             </div>
@@ -63,8 +63,8 @@
       data(){
           return{
             cards:[
-              {title:'Users', numbers:'900', status:'inc', percent:'10.58', subtitle:'Members Online'},
-              {title:'Sales', numbers:'402', status:'inc', percent:'10.58', subtitle:'New Sales'},
+              {title:'Users', numbers:'900', status:'inc', percent:'15.32', subtitle:'Members Online'},
+              {title:'Sales', numbers:'402', status:'inc', percent:'7.2', subtitle:'New Sales'},
               {title:'Profits', numbers:'2000', status:'dec', percent:'12.38', subtitle:"Today's Profit (Ksh)"}
             ]
           }
