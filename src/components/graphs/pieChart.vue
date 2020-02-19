@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-h4 flex flex-center">Pie Chart</div><br>
-    <apexchart type="pie" width="380" :options="chartOptions" :series="series"></apexchart>
+    <apexchart type="pie" width="80%" :options="chartOptions" :series="series"></apexchart>
   </div>
 </template>
 
@@ -23,6 +23,7 @@
           },
           chart: {
             width: 380,
+            height: 400,
             type: 'pie',
           },
           labels: ['Nairobi', 'Mombasa', 'Kisumu', 'Eldoret', 'Machakos'],

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-h4 flex flex-center">Mixed Chart</div>
-    <apexchart width="500" type="line" :options="chartOptions" :series="series"></apexchart>
+    <apexchart width="100%" type="line" :options="chartOptions" :series="series"></apexchart>
   </div>
 </template>
 
@@ -30,7 +30,7 @@
        }],
        chartOptions: {
          chart: {
-           height: 350,
+           height: 450,
            type: 'line',
            stacked: false,
          },

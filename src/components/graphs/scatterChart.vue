@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-h4 flex flex-center">Scatter Chart</div>
-    <apexchart type="scatter" height="350" :options="chartOptions" :series="series"></apexchart>
+    <apexchart type="scatter" width="100%" height="350" :options="chartOptions" :series="series"></apexchart>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-h4 flex flex-center">Horizontal Bar Chart</div>
-    <apexchart width="500" type="bar" :options="chartOptions" :series="series"></apexchart>
+    <apexchart width="100%" type="bar" :options="chartOptions" :series="series"></apexchart>
   </div>
 </template>
 
