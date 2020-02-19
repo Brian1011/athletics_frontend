@@ -1,6 +1,6 @@
 {
   "name": "admin_dashboard",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "An Admin Dashboard Template created with Vue.js and Quasar. Designed and created by Brian Mutinda - https://www.linkedin.com/in/brian-mutinda-366064163/. ",
   "productName": "Vue Admin Template",
   "cordovaId": "org.cordova.quasar.app",
