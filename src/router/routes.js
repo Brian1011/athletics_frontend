@@ -7,6 +7,7 @@ import graphs from "../pages/menu/graphs"
 import examples from "../pages/menu/examples"
 import athlete from "../pages/athletes/athlete"
 import team from "../pages/teams/team"
+import race from "../pages/races/race"
 
 const routes = [
   {
@@ -28,6 +29,7 @@ const routes = [
       { path: 'examples', component: examples},
       { path: 'athlete', component: athlete},
       { path: 'teams', component: team},
+      { path: 'races', component: race},
     ],
   },
 ]
