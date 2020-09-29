@@ -11,7 +11,7 @@
             <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
           </q-avatar>
           -->
-          Vue Admin Dashboard Template
+          Athletics
         </q-toolbar-title>
 
         <div class="row">
@@ -24,15 +24,15 @@
         </div>
 
         <div class="xs-hide">
-          <q-btn flat round dense icon="notifications" class="">
-            <q-badge floating color="grey">10</q-badge>
-            <q-tooltip>Updates</q-tooltip>
-          </q-btn>
+<!--          <q-btn flat round dense icon="notifications" class="">-->
+<!--            <q-badge floating color="grey">10</q-badge>-->
+<!--            <q-tooltip>Updates</q-tooltip>-->
+<!--          </q-btn>-->
 
-          <q-btn flat round dense icon="message" class="q-ml-sm">
-            <q-badge floating color="red">4</q-badge>
-            <q-tooltip>Messages</q-tooltip>
-          </q-btn>
+<!--          <q-btn flat round dense icon="message" class="q-ml-sm">-->
+<!--            <q-badge floating color="red">4</q-badge>-->
+<!--            <q-tooltip>Messages</q-tooltip>-->
+<!--          </q-btn>-->
 
           <q-btn flat round dense class="q-ml-sm">
             <q-avatar flat round dense color="black" text-color="white"><img src="statics/images/red.jpeg"></q-avatar>
@@ -109,11 +109,12 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-    <q-footer elevated class="bg-dark text-white">
-      <q-toolbar>
-          Designed and Created by --> <a href="https://www.linkedin.com/in/brian-mutinda-366064163/">  Maingi Brian Mutinda</a>
-      </q-toolbar>
-    </q-footer>
+<!--    <q-footer elevated class="bg-dark text-white">-->
+<!--      <q-toolbar>-->
+<!--&lt;!&ndash;          Designed and Created by &ndash;&gt; <a href="https://www.linkedin.com/in/brian-mutinda-366064163/">  Maingi Brian Mutinda</a>&ndash;&gt;-->
+<!--          -->
+<!--      </q-toolbar>-->
+<!--    </q-footer>-->
   </q-layout>
 </template>
 
@@ -128,7 +129,7 @@
         menus:[
           {link: 'inbox', icon: 'dashboard', label: 'Dashboard', to:'/dashboard'},
           {link: 'athlete', icon: 'person', label: 'Athlete', to:'/athlete'},
-          {link: 'athlete', icon: 'people', label: 'Team', to:'/athlete'},
+          {link: 'team', icon: 'people', label: 'Team', to:'/teams'},
           {link: 'table', icon: 'table_chart', label: 'Tables', to:'/tables'},
           {link: 'forms', icon: 'notes', label: 'Forms', to:'/forms'},
           {link: 'notification', icon: 'notifications', label: 'Notifications', to:'/notifications'},

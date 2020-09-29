@@ -6,7 +6,7 @@ import notifications from "../pages/menu/notifications"
 import graphs from "../pages/menu/graphs"
 import examples from "../pages/menu/examples"
 import athlete from "../pages/athletes/athlete"
-import addTeam from "../pages/teams/addTeam"
+import team from "../pages/teams/team"
 
 const routes = [
   {
@@ -27,7 +27,7 @@ const routes = [
       { path: 'graphs', component: graphs},
       { path: 'examples', component: examples},
       { path: 'athlete', component: athlete},
-      { path: 'newTeam', component: addTeam},
+      { path: 'teams', component: team},
     ],
   },
 ]

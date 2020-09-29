@@ -1,7 +1,7 @@
 <template>
   <div>
     <q-table
-      title="Registered athletes"
+      title="Teams"
       :data="tableData"
       :columns="columns"
       row-key="name"
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "allAthletes",
+  name: "allTeams",
   computed: {
     tableData(){
       return this.$store.state.table.tableData;

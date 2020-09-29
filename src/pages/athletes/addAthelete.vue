@@ -9,8 +9,8 @@
               <q-input color="primary" filled label="Name"></q-input>
               <br>
 
-              <q-select filled v-model="team" :options="teams" label="Filled" />
-              <br>
+<!--              <q-select filled v-model="team" :options="teams" label="Filled" />-->
+<!--              <br>-->
 
               <q-option-group
                 v-model="group"
@@ -18,6 +18,7 @@
                 color="primary"
                 inline
                 dense
+                class="q-py-lg"
               />
               <br>
 
