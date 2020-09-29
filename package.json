@@ -2,7 +2,7 @@
   "name": "admin_dashboard",
   "version": "1.0.0",
   "description": "An Admin Dashboard Template created with Vue.js and Quasar. Designed and created by Brian Mutinda - https://www.linkedin.com/in/brian-mutinda-366064163/. ",
-  "productName": "Vue Admin Template",
+  "productName": "Athletics app",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "Brian Mutinda <mutindabrian26@gmail.com>",

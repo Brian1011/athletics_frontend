@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 // import example from './module-example'
 import table from './tables'
+import auth from './modules/auth'
 
 Vue.use(Vuex)
 
@@ -16,16 +17,15 @@ Vue.use(Vuex)
  */
 
 export default function (/* { ssrContext } */) {
-  const Store = new Vuex.Store({
+  return new Vuex.Store({
     modules: {
       // example
-      table
+      table,
+      auth
     },
 
     // enable strict mode (adds overhead!)
     // for dev mode only
     strict: process.env.DEV
   })
-
-  return Store
 }

@@ -127,17 +127,21 @@
         left: true,
         link: 'inbox',
         menus:[
-          {link: 'inbox', icon: 'dashboard', label: 'Dashboard', to:'/dashboard'},
+          // {link: 'inbox', icon: 'dashboard', label: 'Dashboard', to:'/dashboard'},
           {link: 'athlete', icon: 'person', label: 'Athlete', to:'/athlete'},
           {link: 'team', icon: 'people', label: 'Team', to:'/teams'},
           {link: 'race', icon: 'people', label: 'Race', to:'/races'},
-          {link: 'table', icon: 'table_chart', label: 'Tables', to:'/tables'},
-          {link: 'forms', icon: 'notes', label: 'Forms', to:'/forms'},
+          // {link: 'table', icon: 'table_chart', label: 'Tables', to:'/tables'},
+          // {link: 'forms', icon: 'notes', label: 'Forms', to:'/forms'},
           {link: 'notification', icon: 'notifications', label: 'Notifications', to:'/notifications'},
           {link: 'graph', icon: 'pie_chart', label: 'Charts', to:'/graphs'},
         ],
         menus_extra:[
-          {link: 'example', icon: 'apps', label: 'Examples', to:'/examples'},
+          {link: 'performance', icon: 'apps', label: 'My team performance', to:'/examples'},
+          {link: 'performance', icon: 'apps', label: 'My Athletes performance', to:'/examples'},
+          {link: 'performance', icon: 'apps', label: 'All teams performance', to:'/examples'},
+          {link: 'performance', icon: 'apps', label: 'Athletes performance', to:'/examples'},
+          // {link: 'example', icon: 'apps', label: 'Examples', to:'/examples'},
           {link: 'exit', icon: 'lock', label: 'Exit', to:'/'}
         ]
       }
@@ -145,7 +149,13 @@
 
     methods: {
       goToPage(route){
-        this.$router.push(route);
+
+        if(route === '/'){
+          // user is logging out
+          this.$store.dispatch("auth/logout")
+        }else{
+          this.$router.push(route);
+        }
       }
     }
   }
