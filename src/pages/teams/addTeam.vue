@@ -1,9 +1,9 @@
 <template>
   <div class="q-px-md q-py-md">
-    <div class="row">
+    <div class="row ">
       <div class="col-xs-12 col-sm-6 q-pb-sm offset-sm-3">
-        <q-card class="text-black">
-          <p class="text-h6 flex flex-center text-black">Add new athlete</p>
+        <q-card>
+          <p class="text-h6 flex flex-center">Add new athlete</p>
           <q-card-section>
             <q-form @submit="submit">
               <q-input color="primary" filled label="Name"></q-input>
@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: "addAthlete",
+  name: "addTeam",
   data(){
     return {
       options: [
