@@ -2,7 +2,7 @@
   <div>
     <q-table
       title="Registered athletes"
-      :data="tableData"
+      :data="athletes"
       :columns="columns"
       row-key="name"
       :filter="filter"
@@ -20,9 +20,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: "allAthletes",
   computed: {
+    ...mapGetters("athlete", {
+      athletes: 'allAthletes'
+    }),
     tableData(){
       return this.$store.state.table.tableData;
     }
@@ -32,19 +36,22 @@ export default {
       filter: '',
       columns: [
         {
-          name: 'name',
+          name: 'id',
           required: true,
-          label: 'Name',
+          label: 'id',
           align: 'left',
-          field: row => row.name,
+          field: row => row.id,
           format: val => `${val}`,
           sortable: true
         },
-        { name: 'calories', align: 'center', label: 'Marathon type', field: 'calories', sortable: true },
-        { name: 'carbs', label: 'Gender', field: 'carbs', sortable: true  },
-        { name: 'protein', label: 'Team', field: 'protein' },
+        { name: 'name', label: 'Name', field: 'name', sortable: true },
+        { name: 'gender', label: 'Gender', field: 'gender', sortable: true  },
+        { name: 'marathonType', label: 'Team', field: 'marathonType'},
       ],
     }
+  },
+  created() {
+    this.$store.dispatch('athlete/loadAthletes')
   }
 }
 </script>

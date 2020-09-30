@@ -6,23 +6,21 @@
           <p class="text-h6 flex flex-center text-black">Add new athlete</p>
           <q-card-section>
             <q-form @submit="submit">
-              <q-input color="primary" filled label="Name"></q-input>
+              <q-input color="primary" filled label="Name" v-model="athleteData.name"></q-input>
               <br>
 
-              <q-option-group
-                v-model="group"
-                :options="options"
-                color="primary"
-                inline
-                dense
-                class="q-py-lg"
-              />
+              <q-select filled v-model="athleteData.marathonType" :options="marathonTypes" label="Filled" />
               <br>
 
-              <q-select filled v-model="marathonDefault" :options="marathonTypes" label="Filled" />
-              <br>
+              <div class="q-pa-xs">
+                <div class="q-pa-xs">Select gender</div>
+                <div class="q-gutter-sm">
+                  <q-radio v-model="athleteData.gender" val="male" label="Male" />
+                  <q-radio v-model="athleteData.gender" val="female" label="Female" />
+                </div>
+              </div><br>
 
-              <q-btn color="primary" size='md'>Submit</q-btn>
+              <q-btn color="primary" size='md' @click="submit">Submit</q-btn>
             </q-form>
           </q-card-section>
         </q-card>
@@ -34,10 +32,16 @@
 <script>
 export default {
   name: "addAthlete",
+  computed: {
+
+  },
   data(){
     return {
       athleteData: {
-
+        name: '',
+        gender: '',
+        marathonType: 'Select marathon type',
+        team: 1,
       },
 
       options: [
@@ -53,13 +57,20 @@ export default {
 
       team: 'Select team',
       teams: [
-        'Google', 'Facebook', 'Twitter', 'Apple', 'Oracle'
+        'Team 1', 'Facebook', 'Twitter', 'Apple', 'Oracle'
       ],
 
       marathonDefault: 'Select marathon type',
       marathonTypes: [
-        '300', '800', '1km', '10km',
+        '10 KM', 'Half marathon (13.1 miles)', 'Full marathon (42 km)', 'Ultra marathon',
       ]
+    }
+  },
+  methods: {
+    submit(){
+      console.log(this.athleteData);
+      this.$store.dispatch("athlete/registerAthlete", this.athleteData);
+
     }
   }
 }
