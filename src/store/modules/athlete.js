@@ -1,15 +1,19 @@
 const state = ()=>({
   allAthletes: [],
-
+  runners: []
 });
 
 const getters = {
-  allAthletes: state => state.allAthletes
+  allAthletes: state => state.allAthletes,
+  allRunnersList: state => state.runners
 }
 
 const mutations = {
   setAthletes(state, athletes){
     state.allAthletes = athletes
+  },
+  setRunners(state, athletes){
+    state.runners = athletes
   }
 }
 
@@ -40,6 +44,25 @@ const actions = {
     let existingData = localStorage.getItem("athletes")
     existingData = existingData ? JSON.parse(existingData): [];
     commit("setAthletes", existingData)
+  },
+
+  loadRunners({commit}){
+    let racers = [];
+    let existingData = localStorage.getItem("athletes")
+    existingData = existingData ? JSON.parse(existingData): [];
+    if(existingData.length > 0){
+      for(let i=0; i<existingData.length; i++){
+        racers.push(
+          {
+            value: existingData[i].id,
+            label: existingData[i].name
+          }
+        )
+      }
+
+      console.log(racers);
+      commit("setRunners", racers)
+    }
   }
 }
 

@@ -5,6 +5,7 @@ import Vuex from 'vuex'
 import table from './tables'
 import auth from './modules/auth'
 import athlete from './modules/athlete'
+import race from './modules/race'
 
 Vue.use(Vuex)
 
@@ -23,7 +24,8 @@ export default function (/* { ssrContext } */) {
       // example
       table,
       auth,
-      athlete
+      athlete,
+      race,
     },
 
     // enable strict mode (adds overhead!)

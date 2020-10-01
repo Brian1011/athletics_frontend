@@ -35,11 +35,19 @@ const actions = {
 
     let defaultTeams = [
       {id: 1, name: 'Team A', county: 'Nairobi', teamManager: 1},
-      {id: 1, name: 'Team A', county: 'Nairobi', teamManager: 2},
+      {id: 2, name: 'Team A', county: 'Nairobi', teamManager: 2},
     ]
 
-    let races = []
-    let raceResults = []
+    let races = [
+      {id: 1, raceName: '1OO METRES KIAMBU', venue: 'KIAMBU TOWN', county:'Kiambu', gender: 'male', distance:100},
+      {id: 2, raceName: '1O KM', venue: 'KIAMBU TOWN', county:'Kiambu', gender: 'male', distance:10000}
+    ]
+
+    let raceResults = [
+      {id: 1, raceId: 1, athleteId: 1, athleteName: 'Tom', seconds: 200, totalParticipants: 3},
+      {id: 2, raceId: 1, athleteId: 2, athleteName: 'Pauline', seconds: 200, totalParticipants: 3},
+      {id: 3, raceId: 1, athleteId: 3, athleteName: 'James Wairimu', seconds: 240, totalParticipants: 3},
+    ]
 
     return new Promise((resolve) => {
       // check if athletes exist
@@ -54,6 +62,22 @@ const actions = {
       if(existingUsers.length === 0){
         existingUsers = defaultUsers
         localStorage.setItem("users", JSON.stringify(existingUsers))
+      }
+
+      // check if race exists
+      let existingRaces = localStorage.getItem("races")
+      existingRaces = existingRaces ? JSON.parse(existingRaces): [];
+      if(existingRaces.length === 0){
+        existingRaces = races
+        localStorage.setItem("races", JSON.stringify(existingRaces))
+      }
+
+      // check if race results exist
+      let existingRaceResults = localStorage.getItem("raceResults")
+      existingRaceResults = existingRaceResults ? JSON.parse(existingRaceResults): [];
+      if(existingRaceResults.length === 0){
+        existingRaceResults = raceResults
+        localStorage.setItem("raceResults", JSON.stringify(existingRaceResults))
       }
 
       // let users = localStorage.setItem("users", JSON.stringify(defaultUsers))
