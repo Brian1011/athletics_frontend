@@ -1,3 +1,4 @@
+<script src="../../store/modules/auth.js"></script>
 <template>
   <div>
     <q-table

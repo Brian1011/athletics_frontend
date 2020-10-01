@@ -23,7 +23,7 @@ const actions = {
     existingData = existingData ? JSON.parse(existingData): [];
     existingData.push(
       {
-        id: existingData.length,
+        id: existingData.length + 1,
         name: athleteData.name,
         gender: athleteData.gender,
         teamId: athleteData.teamId,

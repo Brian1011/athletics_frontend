@@ -1,10 +1,12 @@
 const state = () => ({
   allRaces: [],
-  raceResults: [],
+  allRacesResults: [],
+  raceResult: [],
 });
 
 const getters = {
-
+  allRaces: state => state.allRaces,
+  raceResult: state => state.raceResult
 }
 
 const mutations = {
@@ -12,8 +14,11 @@ const mutations = {
     state.allRaces = races
   },
   newRaceResults(state, raceResults){
-    state.raceResults = raceResults
-  }
+    state.allRacesResults = raceResults
+  },
+  selectedRace(state, race){
+    state.raceResult = race;
+  },
 }
 
 const actions = {
@@ -23,7 +28,7 @@ const actions = {
     existingRaces = existingRaces ? JSON.parse(existingRaces): [];
     existingRaces.push(
       {
-        id: existingRaces.length,
+        id: existingRaces.length + 1,
         raceName: raceData.raceName,
         venue: raceData.venue,
         county: raceData.county,
@@ -43,7 +48,7 @@ const actions = {
       existingRaceResults.push(
         {
           id: existingRaces.length,
-          raceId: existingRaces.length - 1,
+          raceId: existingRaces.length,
           athleteId: raceData.runners[i].value,
           athleteName: raceData.runners[i].label,
           seconds: 0,
@@ -60,16 +65,36 @@ const actions = {
       color: 'positive',
       position: 'top'
     })
-
-    // // check if race results exist
-    // let existingRaceResults = localStorage.getItem("raceResults")
-    // existingRaceResults = existingRaceResults ? JSON.parse(existingRaceResults): [];
-    // if(existingRaceResults.length === 0){
-    //   existingRaceResults = raceResults
-    //   localStorage.setItem("raceResults", JSON.stringify(existingRaceResults))
-    // }
-
     console.log(raceData);
+  },
+
+  loadRaces({commit}){
+    // races
+    let existingRaces = localStorage.getItem("races")
+    existingRaces = existingRaces ? JSON.parse(existingRaces): [];
+    commit("newRace", existingRaces);
+
+    // race results
+    let existingRaceResults = localStorage.getItem("raceResults")
+    existingRaceResults = existingRaceResults ? JSON.parse(existingRaceResults): [];
+    commit("newRaceResults", existingRaceResults)
+  },
+
+  selectedRace({commit, state}, selectedRace){
+    let foundData = state.allRacesResults.filter(
+      results => (results.raceId === selectedRace.id)
+    )
+
+    if(foundData === undefined){
+      Notify.create({
+        message: 'Error',
+        caption: 'No racers found for this race',
+        color: 'danger',
+        position: 'top'
+      })
+    } else {
+      commit("selectedRace", foundData)
+    }
   }
 }
 

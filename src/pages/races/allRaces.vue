@@ -2,13 +2,12 @@
   <div>
     <q-table
       title="Registered races"
-      :data="tableData"
+      :data="allRaces"
       :columns="columns"
       row-key="name"
       :filter="filter"
       class="q-mb-lg q-mt-lg"
-      selection="single"
-      :selected.sync="selected"
+      binary-state-sort
     >
       <template v-slot:top-right>
         <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
@@ -19,9 +18,21 @@
       </template>
 
       <template v-slot:top-left>
-        <q-btn color="primary" v-show="selected.length > 0" @click="dialog=true">{{showMessage.call()}}</q-btn>
-        <p class="text-h6" v-show="selected.length === 0">Races</p>
+        <p class="text-h6">Races</p>
       </template>
+
+      <template v-slot:body="props">
+        <q-tr props="props">
+          <q-td key="race_id" :props="props">{{props.row.id}}</q-td>
+          <q-td key="race_name" :props="props">{{props.row.raceName}}</q-td>
+          <q-td key="race_venue" :props="props">{{props.row.venue}}</q-td>
+          <q-td key="race_distance" :props="props">{{props.row.distance}}</q-td>
+          <q-td key="action" :props="props">
+            <q-btn @click=setSelectedRace(props.row) color="primary">{{props.row.raceName}} Race results</q-btn>
+          </q-td>
+        </q-tr>
+      </template>
+
     </q-table>
 
     <!-- view results of that county -->
@@ -51,13 +62,14 @@
         </q-card-section>
       </q-card>
     </q-dialog>
-<!--    <div class="q-mt-md">-->
-<!--      Selected: {{ JSON.stringify(selected) }}-->
-<!--    </div>-->
+    <div class="q-mt-md">
+      Selected: {{ JSON.stringify(selected) }}
+    </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import RaceResults from "./raceResults";
 export default {
   name: "allRaces",
@@ -65,7 +77,10 @@ export default {
   computed: {
     tableData(){
       return this.$store.state.table.tableData;
-    }
+    },
+    ...mapGetters("race", {
+        allRaces: 'allRaces'
+    })
   },
   data(){
     return{
@@ -74,17 +89,15 @@ export default {
       maximizedToggle: true,
       columns: [
         {
-          name: 'name',
-          required: true,
-          label: 'Name',
-          align: 'left',
-          field: row => row.name,
-          format: val => `${val}`,
+          name: 'race_id',
+          label: 'Id',
+          field: row => row.id,
           sortable: true
         },
-        { name: 'calories', align: 'center', label: 'Marathon type', field: 'calories', sortable: true },
-        { name: 'carbs', label: 'Gender', field: 'carbs', sortable: true  },
-        { name: 'protein', label: 'Total participants', field: 'protein' },
+        { name: 'race_name', label: 'Race Name', field: 'raceName', sortable: true },
+        { name: 'race_venue', label: 'Venue', field: 'venue', sortable: true  },
+        { name: 'race_distance', label: 'Distance (Metres)', field: 'distance' },
+        { name: 'action', label: 'Results', field:'raceName'},
       ],
       selected: []
     }
@@ -92,11 +105,20 @@ export default {
   methods: {
     showMessage(){
       if(this.selected.length > 0){
-        return 'View race results of '+this.selected[0].name
+        return 'View race results of '+this.selected[0].raceName
       } else {
         return 'View race results'
       }
+    },
+
+    setSelectedRace(rowData){
+      this.selected = rowData
+      this.$store.dispatch('race/selectedRace', this.selected)
     }
+  },
+
+  created() {
+    this.$store.dispatch('race/loadRaces')
   }
 }
 </script>
