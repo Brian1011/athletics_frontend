@@ -137,12 +137,7 @@
           {link: 'graph', icon: 'pie_chart', label: 'Charts', to:'/graphs'},
         ],
         menus_extra:[
-          {link: 'performance', icon: 'apps', label: 'My team performance', to:'/examples'},
-          {link: 'performance', icon: 'apps', label: 'My Athletes performance', to:'/examples'},
-          {link: 'performance', icon: 'apps', label: 'All teams performance', to:'/examples'},
-          {link: 'performance', icon: 'apps', label: 'Athletes performance', to:'/examples'},
-          // {link: 'example', icon: 'apps', label: 'Examples', to:'/examples'},
-          {link: 'exit', icon: 'lock', label: 'Exit', to:'/'}
+          {link: 'performance', icon: 'apps', label: 'Athletics performance', to:'/athletePerformance'},
         ]
       }
     },

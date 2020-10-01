@@ -13,6 +13,10 @@
 
   export default {
     name: "horizontalBarChart",
+    props: {
+      dataSeries: Array,
+      dataCategories: Array
+    },
     data(){
       return{
         series: [{

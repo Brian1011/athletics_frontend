@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-h4 flex flex-center">Line Chart</div>
-    <apexchart width="100%" type="line" :options="chartOptions" :series="series"></apexchart>
+    <apexchart width="100%" type="line" :options="chartOptions" :series="testSeries"></apexchart>
   </div>
 </template>
 
@@ -11,8 +11,12 @@
   Vue.use(VueApexCharts);
   Vue.component('apexchart',VueApexCharts)
 
+  let testSeries;
   export default {
     name: "lineChart",
+    props:{
+      testSeries,
+    },
     data(){
       return{
         series: [{
@@ -34,7 +38,7 @@
             curve: 'straight'
           },
           title: {
-            text: 'Sales Trends per Month',
+            text: 'Speed per race',
             align: 'left'
           },
           grid: {
@@ -43,9 +47,9 @@
               opacity: 0.5
             },
           },
-          xaxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-          }
+          // xaxis: {
+          //   categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+          // }
         },
       }
     }

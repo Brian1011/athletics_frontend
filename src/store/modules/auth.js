@@ -40,13 +40,15 @@ const actions = {
 
     let races = [
       {id: 1, raceName: '1OO METRES KIAMBU', venue: 'KIAMBU TOWN', county:'Kiambu', gender: 'male', distance:100},
-      {id: 2, raceName: '1O KM', venue: 'KIAMBU TOWN', county:'Kiambu', gender: 'male', distance:10000}
+      {id: 2, raceName: '1O KM', venue: 'KIAMBU TOWN', county:'Kiambu', gender: 'male', distance:100}
     ]
 
     let raceResults = [
       {id: 1, raceId: 1, athleteId: 1, athleteName: 'Tom', seconds: 200, totalParticipants: 3},
       {id: 2, raceId: 1, athleteId: 2, athleteName: 'Pauline', seconds: 200, totalParticipants: 3},
       {id: 3, raceId: 1, athleteId: 3, athleteName: 'James Wairimu', seconds: 240, totalParticipants: 3},
+      {id: 4, raceId: 2, athleteId: 2, athleteName: 'Pauline', seconds: 400, totalParticipants: 3},
+      {id: 5, raceId: 2, athleteId: 3, athleteName: 'James Wairimu', seconds: 10, totalParticipants: 3},
     ]
 
     return new Promise((resolve) => {

@@ -6,7 +6,8 @@ const state = () => ({
 
 const getters = {
   allRaces: state => state.allRaces,
-  raceResult: state => state.raceResult
+  raceResult: state => state.raceResult,
+  allRacesResults: state => state.allRacesResults
 }
 
 const mutations = {
@@ -33,7 +34,7 @@ const actions = {
         venue: raceData.venue,
         county: raceData.county,
         gender: raceData.gender,
-        distance: raceData.distance
+        distance: parseInt(raceData.distance)
       }
     )
 

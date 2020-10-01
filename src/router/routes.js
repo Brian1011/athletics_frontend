@@ -9,6 +9,7 @@ import athlete from "../pages/athletes/athlete"
 import team from "../pages/teams/team"
 import race from "../pages/races/race"
 import raceResults from "../pages/races/raceResults";
+import athletePerformance from "../pages/athletes/athletesPerfomance"
 
 const routes = [
   {
@@ -31,7 +32,8 @@ const routes = [
       { path: 'athlete', component: athlete},
       { path: 'teams', component: team},
       { path: 'races', component: race},
-      { path: 'raceResult', component: raceResults}
+      { path: 'raceResult', component: raceResults},
+      { path: 'athletePerformance', component: athletePerformance}
     ],
   },
 ]
