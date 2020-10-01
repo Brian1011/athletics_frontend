@@ -58,19 +58,17 @@
         </q-bar>
 
         <q-card-section>
-          <race-results></race-results>
+          <race-results :race-results="raceResult"></race-results>
         </q-card-section>
       </q-card>
     </q-dialog>
-    <div class="q-mt-md">
-      Selected: {{ JSON.stringify(selected) }}
-    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import RaceResults from "./raceResults";
+
 export default {
   name: "allRaces",
   components: {RaceResults},
@@ -79,7 +77,8 @@ export default {
       return this.$store.state.table.tableData;
     },
     ...mapGetters("race", {
-        allRaces: 'allRaces'
+        allRaces: 'allRaces',
+        raceResult: 'raceResult'
     })
   },
   data(){
@@ -114,6 +113,7 @@ export default {
     setSelectedRace(rowData){
       this.selected = rowData
       this.$store.dispatch('race/selectedRace', this.selected)
+      this.dialog = true
     }
   },
 

@@ -47,7 +47,7 @@ const actions = {
     {
       existingRaceResults.push(
         {
-          id: existingRaces.length,
+          id: existingRaceResults.length,
           raceId: existingRaces.length,
           athleteId: raceData.runners[i].value,
           athleteName: raceData.runners[i].label,
@@ -95,6 +95,36 @@ const actions = {
     } else {
       commit("selectedRace", foundData)
     }
+  },
+
+  updateRaceResult({commit}, raceResult){
+    console.log(raceResult.data)
+    console.log(raceResult.seconds)
+    let existingRaceResults = localStorage.getItem("raceResults")
+    existingRaceResults = existingRaceResults ? JSON.parse(existingRaceResults): [];
+    if(existingRaceResults.length > 0){
+      let foundDataIndex = existingRaceResults.findIndex(
+        results => (results.id === raceResult.data.id)
+      )
+      existingRaceResults[foundDataIndex].seconds = parseInt(raceResult.seconds)
+      commit("newRaceResults", existingRaceResults)
+      localStorage.setItem("raceResults", JSON.stringify(existingRaceResults))
+
+      Notify.create({
+        message: 'Success',
+        caption: 'Time updated successfully',
+        color: 'positive',
+        position: 'top'
+      })
+    } else {
+      Notify.create({
+        message: 'Error',
+        caption: "Can't update race results",
+        color: 'danger',
+        position: 'top'
+      })
+    }
+
   }
 }
 
