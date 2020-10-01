@@ -9,6 +9,7 @@
       :filter="filter"
       class="q-mb-lg q-mt-lg"
     >
+
       <template v-slot:top-right>
         <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
           <template v-slot:append>
@@ -47,7 +48,7 @@ export default {
         },
         { name: 'name', label: 'Name', field: 'name', sortable: true },
         { name: 'gender', label: 'Gender', field: 'gender', sortable: true  },
-        { name: 'marathonType', label: 'Team', field: 'marathonType'},
+        { name: 'marathonType', label: 'Marathon type', field: 'marathonType'},
       ],
     }
   },

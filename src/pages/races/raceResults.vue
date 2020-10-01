@@ -31,7 +31,7 @@
 
         <q-card-actions align="right" class="text-primary">
           <q-btn flat label="Cancel" v-close-popup />
-          <q-btn flat label="Save results" @click="saveResults"/>
+          <q-btn flat label="Save results" @click="saveResults" v-if="user.userType === 'admin'"/>
         </q-card-actions>
       </q-card>
     </q-dialog>
@@ -48,7 +48,10 @@ name: "raceResults",
   computed: {
     ...mapGetters("race", {
       raceResult: 'raceResult'
-    })
+    }),
+    ...mapGetters("auth", {
+      user: 'getCurrentUser'
+    }),
   },
   data () {
     return {
@@ -75,7 +78,7 @@ name: "raceResults",
     }
   },
   created() {
-    //this.$store.dispatch('')
+    this.$store.dispatch('auth/loadUser')
   }
 }
 </script>

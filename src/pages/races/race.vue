@@ -49,6 +49,9 @@ export default {
       dialog: false,
       maximizedToggle: true
     }
+  },
+  created() {
+    this.$store.dispatch('auth/loadUser')
   }
 }
 </script>

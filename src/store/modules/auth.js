@@ -4,7 +4,7 @@ const state = ()=>({
 })
 
 const getters = {
-
+  getCurrentUser: state => state.currentUser,
 }
 
 const mutations = {
@@ -89,7 +89,6 @@ const actions = {
   },
 
   login: function ({commit, state}, userData) {
-
     let allUsers = state.allUsers
     let foundData = state.allUsers.find(
       user => (user.email === userData.email && user.password === userData.password)
@@ -112,6 +111,16 @@ const actions = {
   logout(){
     localStorage.removeItem("currentUser");
     this.$router.push('/')
+  },
+
+  loadUser({commit}){
+    let existingUser = localStorage.getItem("currentUser")
+    existingUser = existingUser ? JSON.parse(existingUser): {};
+    if(existingUser === null){
+      this.$router.push('/')
+    } else {
+      commit('setLoggedInUser', existingUser);
+    }
   }
 }
 

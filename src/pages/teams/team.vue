@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-toolbar-title>Teams</q-toolbar-title>
         <q-space></q-space>
-        <q-btn label="Add new team" color="primary" @click="dialog = true" />
+<!--        <q-btn label="Add new team" color="primary" @click="dialog = true" />-->
       </q-toolbar>
 
       <q-dialog
@@ -49,6 +49,9 @@ export default {
       dialog: false,
       maximizedToggle: true
     }
+  },
+  created() {
+    this.$store.dispatch('auth/loadUser')
   }
 }
 </script>

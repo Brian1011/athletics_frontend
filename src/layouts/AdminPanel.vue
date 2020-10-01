@@ -99,8 +99,6 @@
 
           <q-item-section>{{menu.label}}</q-item-section>
         </q-item>
-
-
       </q-list>
 
       <q-separator></q-separator>
@@ -109,12 +107,6 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-<!--    <q-footer elevated class="bg-dark text-white">-->
-<!--      <q-toolbar>-->
-<!--&lt;!&ndash;          Designed and Created by &ndash;&gt; <a href="https://www.linkedin.com/in/brian-mutinda-366064163/">  Maingi Brian Mutinda</a>&ndash;&gt;-->
-<!--          -->
-<!--      </q-toolbar>-->
-<!--    </q-footer>-->
   </q-layout>
 </template>
 
@@ -127,17 +119,13 @@
         left: true,
         link: 'inbox',
         menus:[
-          // {link: 'inbox', icon: 'dashboard', label: 'Dashboard', to:'/dashboard'},
           {link: 'athlete', icon: 'person', label: 'Athlete', to:'/athlete'},
-          {link: 'team', icon: 'people', label: 'Team', to:'/teams'},
-          {link: 'race', icon: 'people', label: 'Race', to:'/races'},
-          // {link: 'table', icon: 'table_chart', label: 'Tables', to:'/tables'},
-          // {link: 'forms', icon: 'notes', label: 'Forms', to:'/forms'},
-          {link: 'notification', icon: 'notifications', label: 'Notifications', to:'/notifications'},
-          {link: 'graph', icon: 'pie_chart', label: 'Charts', to:'/graphs'},
+          {link: 'team', icon: 'people', label: 'Teams', to:'/teams'},
+          {link: 'race', icon: 'timer', label: 'Race', to:'/races'},
         ],
         menus_extra:[
           {link: 'performance', icon: 'apps', label: 'Athletics performance', to:'/athletePerformance'},
+          {link: 'exit', icon: 'lock', label: 'Exit', to:'/'}
         ]
       }
     },

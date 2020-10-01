@@ -4,7 +4,13 @@
       <q-toolbar>
         <q-toolbar-title>Athletes</q-toolbar-title>
         <q-space></q-space>
-        <q-btn label="Add new athlete" color="primary" @click="dialog = true" />
+        <q-btn
+            label="Add new athlete"
+            color="primary"
+            @click="dialog = true"
+            v-if="user.userType === 'team_manager'"
+        >
+        </q-btn>
       </q-toolbar>
 
       <q-dialog
@@ -41,16 +47,25 @@
 <script>
 import AllAthletes from "./allAthletes";
 import AddAthlete from "./addAthelete";
+import { mapGetters } from 'vuex'
 export default {
 name: "athlete",
   components: {AddAthlete, AllAthletes},
+  computed: {
+    ...mapGetters("auth", {
+      user: 'getCurrentUser'
+    }),
+  },
   data(){
     return {
       dialog: false,
       maximizedToggle: true
     }
+  },
+  created() {
+      this.$store.dispatch('auth/loadUser')
   }
-}
+  }
 </script>
 
 <style scoped>

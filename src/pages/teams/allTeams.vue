@@ -40,9 +40,8 @@ export default {
           format: val => `${val}`,
           sortable: true
         },
-        { name: 'calories', align: 'center', label: 'Marathon type', field: 'calories', sortable: true },
-        { name: 'carbs', label: 'Gender', field: 'carbs', sortable: true  },
-        { name: 'protein', label: 'Team', field: 'protein' },
+        { name: 'calories', align: 'center', label: 'Number of members', field: 'calories', sortable: true },
+        { name: 'carbs', label: 'Gender', field: 'gender', sortable: true  },
       ],
     }
   }

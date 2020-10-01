@@ -136,6 +136,7 @@ export default {
     }
   },
   created() {
+    this.$store.dispatch('auth/loadUser')
     this.$store.dispatch('athlete/loadRunners')
     this.$store.dispatch('race/loadRaces')
     this.calculateSpeed()

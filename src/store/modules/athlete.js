@@ -1,3 +1,5 @@
+import auth from "./auth";
+
 const state = ()=>({
   allAthletes: [],
   runners: []
@@ -43,6 +45,7 @@ const actions = {
   loadAthletes({commit}){
     let existingData = localStorage.getItem("athletes")
     existingData = existingData ? JSON.parse(existingData): [];
+    // show based on usertype
     commit("setAthletes", existingData)
   },
 
