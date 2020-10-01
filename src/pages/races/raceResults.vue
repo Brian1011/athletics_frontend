@@ -13,7 +13,7 @@
           <q-td key="athlete" :props="props">{{props.row.athleteName}}</q-td>
           <q-td key="seconds" :props="props">{{props.row.seconds}}</q-td>
           <q-td key="actions" :props="props">
-            <q-btn @click="alterResults(props.row)" color="primary">Alter results</q-btn>
+            <q-btn @click="alterResults(props.row)" color="primary" v-if="user.userType === 'admin'">Alter results</q-btn>
           </q-td>
         </q-tr>
       </template>

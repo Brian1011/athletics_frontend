@@ -33,7 +33,7 @@ const routes = [
       { path: 'teams', component: team},
       { path: 'races', component: race},
       { path: 'raceResult', component: raceResults},
-        { path: 'athletePerformance', component: athletePerformance}
+      { path: 'athletePerformance', component: athletePerformance}
     ],
   },
 ]

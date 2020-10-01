@@ -104,7 +104,7 @@ const actions = {
         color: 'positive',
         position: 'top'
       })
-      this.$router.push('/dashboard')
+      this.$router.push('/athlete')
     }
   },
 
