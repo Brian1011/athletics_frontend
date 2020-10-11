@@ -130,6 +130,7 @@ import { mapGetters } from 'vuex'
         ],
         menus_extra:[
           {link: 'performance', icon: 'apps', label: 'Athletics performance', to:'/athletePerformance'},
+          {link: 'performance', icon: 'apps', label: 'Compare performance', to:'/comparePerformance'},
           {link: 'exit', icon: 'lock', label: 'Exit', to:'/'}
         ]
       }

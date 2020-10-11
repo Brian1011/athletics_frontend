@@ -8,8 +8,9 @@ import examples from "../pages/menu/examples"
 import athlete from "../pages/athletes/athlete"
 import team from "../pages/teams/team"
 import race from "../pages/races/race"
-import raceResults from "../pages/races/raceResults";
+import raceResults from "../pages/races/raceResults"
 import athletePerformance from "../pages/athletes/athletesPerfomance"
+import comparisonTool from "../pages/athletes/compareAthletes"
 
 const routes = [
   {
@@ -33,7 +34,8 @@ const routes = [
       { path: 'teams', component: team},
       { path: 'races', component: race},
       { path: 'raceResult', component: raceResults},
-      { path: 'athletePerformance', component: athletePerformance}
+      { path: 'athletePerformance', component: athletePerformance},
+      { path: 'comparePerformance', component: comparisonTool}
     ],
   },
 ]
