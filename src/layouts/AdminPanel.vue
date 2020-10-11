@@ -58,7 +58,7 @@
       <div class="flex flex-center">
         <q-item>
           <q-item-section>
-            <q-item-label>John Doe</q-item-label>
+            <q-item-label>{{user.name}}</q-item-label>
             <q-item-label caption>Logged in</q-item-label>
           </q-item-section>
         </q-item>
@@ -111,9 +111,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
   export default {
     name: 'AdminPanelLayout',
-
+    computed: {
+      ...mapGetters("auth", {
+        user: 'getCurrentUser'
+      }),
+    },
     data () {
       return {
         left: true,
@@ -140,6 +145,10 @@
           this.$router.push(route);
         }
       }
+    },
+
+    created() {
+      this.$store.dispatch("auth/loadUser")
     }
   }
 </script>

@@ -42,12 +42,12 @@
 import { mapGetters } from 'vuex'
 export default {
 name: "raceResults",
-  props:{
-    raceResults: Array
-  },
+  // props:{
+  //   raceResults: Array
+  // },
   computed: {
     ...mapGetters("race", {
-      raceResult: 'raceResult'
+      raceResults: 'raceResult'
     }),
     ...mapGetters("auth", {
       user: 'getCurrentUser'
@@ -79,6 +79,7 @@ name: "raceResults",
   },
   created() {
     this.$store.dispatch('auth/loadUser')
+    this.$store.dispatch('race/loadRaces')
   }
 }
 </script>

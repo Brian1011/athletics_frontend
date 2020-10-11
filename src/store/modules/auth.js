@@ -34,8 +34,11 @@ const actions = {
     ]
 
     let defaultTeams = [
-      {id: 1, name: 'Team A', county: 'Nairobi', teamManager: 1},
-      {id: 2, name: 'Team A', county: 'Nairobi', teamManager: 2},
+      {id: 1, name: 'Team A', county: 'Nairobi', total_members: 20, teamManager: 1},
+      {id: 2, name: 'Team B', county: 'Kiambu', total_members: 15, teamManager: 2},
+      {id: 2, name: 'Team C', county: 'Machackos', total_members: 16, teamManager: 2},
+      {id: 2, name: 'Team D', county: 'Transnzoia', total_members: 8, teamManager: 2},
+      {id: 1, name: 'Team E', county: 'Nairobi', total_members: 12, teamManager: 1},
     ]
 
     let races = [

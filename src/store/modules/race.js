@@ -2,12 +2,14 @@ const state = () => ({
   allRaces: [],
   allRacesResults: [],
   raceResult: [],
+  teams: []
 });
 
 const getters = {
   allRaces: state => state.allRaces,
   raceResult: state => state.raceResult,
-  allRacesResults: state => state.allRacesResults
+  allRacesResults: state => state.allRacesResults,
+  allTeams: state => state.teams
 }
 
 const mutations = {
@@ -20,6 +22,9 @@ const mutations = {
   selectedRace(state, race){
     state.raceResult = race;
   },
+  allTeams(state, teams){
+    state.teams = teams
+  }
 }
 
 const actions = {
@@ -70,6 +75,7 @@ const actions = {
   },
 
   loadRaces({commit}){
+    console.log('*******************TEST***************')
     // races
     let existingRaces = localStorage.getItem("races")
     existingRaces = existingRaces ? JSON.parse(existingRaces): [];
@@ -98,7 +104,7 @@ const actions = {
     }
   },
 
-  updateRaceResult({commit}, raceResult){
+  updateRaceResult({commit,dispatch}, raceResult){
     console.log(raceResult.data)
     console.log(raceResult.seconds)
     let existingRaceResults = localStorage.getItem("raceResults")
@@ -110,7 +116,7 @@ const actions = {
       existingRaceResults[foundDataIndex].seconds = parseInt(raceResult.seconds)
       commit("newRaceResults", existingRaceResults)
       localStorage.setItem("raceResults", JSON.stringify(existingRaceResults))
-
+      dispatch('loadRaces');
       Notify.create({
         message: 'Success',
         caption: 'Time updated successfully',
@@ -125,7 +131,12 @@ const actions = {
         position: 'top'
       })
     }
+  },
 
+  loadTeams({commit}){
+    let existingTeams = localStorage.getItem("teams")
+    existingTeams = existingTeams ? JSON.parse(existingTeams): [];
+    commit("allTeams", existingTeams)
   }
 }
 
